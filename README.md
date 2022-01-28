@@ -18,4 +18,4 @@ A galeria pode ser acessada pelo link: [vitoraguiarc](https://github.com/vitorag
 
 ## Screenshot
 
-![](.img/calculadora.png)
+![](img/calculadora.png)

@@ -5,22 +5,28 @@
 	$resultado = (double) 0;
 	$operacao = (string) null;
 
-	if(isset($_POST["btncalc"]))
+	//Validação para verificar se o botão foi clicado
+	if(isset($_POST['btncalc']))
 	{
-		$valor1 = $_POST["txtn1"];
-		$valor2 = $_POST["txtn2"];
-
-		$operacao = $_POST['rdocalc'];
+		//Recebe os dados do formulário
+		$valor1 = $_POST['txtn1'];
+		$valor2 = $_POST['txtn2'];
+		$operacao = strtolower($_POST['rdocalc']);
 		
-		if($_POST["txtn1"] == "" || $_POST["txtn2"] == "") {
+		//Verificar se algum campo está vazio
+		if($_POST['txtn1'] == "" || $_POST['txtn2'] == "") 
+		{
 			echo("Verificar se todos os valores foram preenchidos");
 		}else
-		{
-			if(!is_numeric ($valor1) || !is_numeric ($valor2)) {
+		{	
+			//Verificar se algum campo esta preenchido de forma incorreta
+			if(!is_numeric ($valor1) || !is_numeric ($valor2)) 
+			{
 				echo("Todos os valores devem ser números válidos");
 			}else
 			{
-				switch($operacao) {
+				switch($operacao) 
+				{
 					case "somar":
 						$resultado = $valor1 + $valor2;
 						break;
@@ -67,9 +73,7 @@
 							
 						</div>	
 						<div id="resultado">
-						<?php
-							echo($resultado);
-						?>
+						<?=$resultado;?>
 						</div>
 						
 					</form>
