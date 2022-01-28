@@ -8,8 +8,10 @@
 	{
 		$valor1 = $_POST["txtn1"];
 		$valor2 = $_POST["txtn2"];
+
+		$operacao = $_POST['rdocalc'];
 		
-		if($_POST["txtn1" == ""] || $_POST["txtn2" == ""]) {
+		if($_POST["txtn1"] == "" || $_POST["txtn2"] == "") {
 			echo("Verificar se todos os valores foram preenchidos");
 		}else
 		{
@@ -17,18 +19,39 @@
 				echo("Todos os valores devem ser números válidos");
 			}else
 			{
-				if($_POST["rdocalc"] == "somar"){
+				// if($_POST["rdocalc"] == "somar"){
+				// 		$resultado = $valor1 + $valor2;
+				// }elseif($_POST["rdocalc"] == "subtrair"){
+				// 	$resultado = $valor1 - $valor2;
+				// }elseif($_POST["rdocalc"] == "multiplicar"){
+				// 	$resultado = $valor1 * $valor2;
+				// }else{
+				// 	$resultado = $valor1 / $valor2;
+				// }
+				
+				//Utilizando switch case
+				switch($operacao) {
+					case "somar":
 						$resultado = $valor1 + $valor2;
-				}elseif($_POST["rdocalc"] == "subtrair"){
-					$resultado = $valor1 - $valor2;
-				}elseif($_POST["rdocalc"] == "multiplicar"){
-					$resultado = $valor1 * $valor2;
-				}else{
-					$resultado = $valor1 / $valor2;
-				}
+						break;
+					case "subtrair":
+						$resultado = $valor1 - $valor2;
+						break;
+					case "multiplicar":
+						$resultado = $valor1 * $valor2;
+						break;
+					default:
+						$resultado = $valor1 / $valor2;
+						break;
+
+		}
 			}
 
 		}
+
+		
+
+
 	
 	
 	
