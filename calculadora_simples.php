@@ -1,9 +1,10 @@
 <?php
 
-	$valor1 = 0;
-	$valor2 = 0;
-	$resultado = 0;
-	
+	$valor1 = (double) 0;
+	$valor2 = (double) 0;
+	$resultado = (double) 0;
+	$operacao = (string) null;
+
 	if(isset($_POST["btncalc"]))
 	{
 		$valor1 = $_POST["txtn1"];
@@ -19,17 +20,6 @@
 				echo("Todos os valores devem ser números válidos");
 			}else
 			{
-				// if($_POST["rdocalc"] == "somar"){
-				// 		$resultado = $valor1 + $valor2;
-				// }elseif($_POST["rdocalc"] == "subtrair"){
-				// 	$resultado = $valor1 - $valor2;
-				// }elseif($_POST["rdocalc"] == "multiplicar"){
-				// 	$resultado = $valor1 * $valor2;
-				// }else{
-				// 	$resultado = $valor1 / $valor2;
-				// }
-				
-				//Utilizando switch case
 				switch($operacao) {
 					case "somar":
 						$resultado = $valor1 + $valor2;
@@ -44,23 +34,11 @@
 						$resultado = $valor1 / $valor2;
 						break;
 
-		}
+				}
 			}
 
 		}
-
-		
-
-
-	
-	
-	
 	}
-
-
-
-
-
 ?>
 
 <html>
